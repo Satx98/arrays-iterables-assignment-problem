@@ -19,9 +19,19 @@ const findMax = (...numList) => {
     if (max < num) max = num;
     if (min > num) min = num;
   }
-  return [max, min];
+  return [min, max];
 };
 
-const [maxNum, minNum] = findMax(...arrNum);
+const [minNum, maxNum] = findMax(...arrNum);
 
 console.log(maxNum, minNum);
+
+const noDuplicateNum = new Set();
+
+for (const num of arrNum) {
+  noDuplicateNum.add(num);
+}
+
+noDuplicateNum.add(9);
+
+console.log(noDuplicateNum);
