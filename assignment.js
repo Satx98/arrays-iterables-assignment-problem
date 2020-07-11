@@ -12,11 +12,16 @@ const reducedNumber = arrNum.reduce((sum, curNum) => sum * curNum, 1);
 
 console.log(reducedNumber);
 
-const findMax = (max, ...numList) => {
+const findMax = (...numList) => {
+  let max = numList[0];
+  let min = numList[0];
   for (const num of numList) {
     if (max < num) max = num;
+    if (min > num) min = num;
   }
-  return max;
+  return [max, min];
 };
 
-console.log(findMax(...arrNum));
+const [maxNum, minNum] = findMax(...arrNum);
+
+console.log(maxNum, minNum);
