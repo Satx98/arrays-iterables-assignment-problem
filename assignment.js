@@ -11,3 +11,12 @@ console.log(mappedArray);
 const reducedNumber = arrNum.reduce((sum, curNum) => sum * curNum, 1);
 
 console.log(reducedNumber);
+
+const findMax = (max, ...numList) => {
+  for (const num of numList) {
+    if (max < num) max = num;
+  }
+  return max;
+};
+
+console.log(findMax(...arrNum));
